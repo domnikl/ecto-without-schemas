@@ -1,18 +1,23 @@
 defmodule Dbsample do
+  alias Dbsample.Repo
+
   @moduledoc """
   Documentation for Dbsample.
   """
 
   @doc """
-  Hello world.
+  Greats all the great guys.
 
   ## Examples
 
       iex> Dbsample.hello
-      :world
+      Hello, Dominik
+      Hello Mike
 
   """
   def hello do
-    :world
+    Repo.get_users()
+    |> Enum.map(fn %{"name" => name} -> "Hello, #{name}" end)
+    |> Enum.each(&IO.puts(&1))
   end
 end
