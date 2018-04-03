@@ -2,6 +2,16 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :dbsample, ecto_repos: [Dbsample.Repo]
+
+config :dbsample, Dbsample.Repo,
+  adapter: Ecto.Adapters.MySQL,
+  database: "dbsample",
+  username: "root",
+  password: "",
+  hostname: "localhost",
+  port: 3306
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,

@@ -10,6 +10,7 @@ defmodule Dbsample.Application do
     children = [
       # Starts a worker by calling: Dbsample.Worker.start_link(arg)
       # {Dbsample.Worker, arg},
+      {Dbsample.Repo, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
